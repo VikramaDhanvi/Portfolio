@@ -1,0 +1,362 @@
+/* ─── Global dark-cosmos look ─────────────────────────────────── */
+html { scroll-behavior: smooth; }
+body {
+  background: #0d0d14;                       /* deep-space base */
+  color: #c9d1d9;                            /* GitHub-light text */
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* all site sections share one backdrop */
+main section,
+.hero-section {
+  background: transparent;
+  padding: 4rem 0;
+}
+
+/* headings pop */
+main section h2,
+main section h3,
+main section h5 { color: #ffffff; }
+
+/* links */
+a         { color: #58a6ff; }
+a:hover   { color: #79c0ff; }
+
+/* offset for fixed navbar */
+section   { scroll-margin-top: 72px; }
+
+/* ─── Hero specific (particles + gradients) ───────────────────── */
+.hero-section {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 30% -10%, rgba(80,0,160,.25), transparent 60%),
+    radial-gradient(ellipse at 110% 20%, rgba(100,0,180,.20), transparent 60%),
+    #0d0d14;
+  overflow: hidden;
+}
+
+/* blinking caret for typewriter */
+.typing-caret{display:inline-block;width:1ch;animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+
+/* ─── GitHub-style dark card (projects) ───────────────────────── */
+.project-card{
+  background:#0d1117;
+  border:1px solid #30363d;
+  color:#c9d1d9;
+  overflow:visible;         /* let neon glow extend */
+}
+
+/* ─── Neon gradient button (projects “Code” button) ───────────── */
+.button{
+  position:relative;z-index:10;display:flex;align-items:center;justify-content:center;
+  width:120px;height:40px;padding:12px;background:#000;color:#fff;border:none;border-radius:8px;
+  font-family:inherit;cursor:pointer;gap:12px;
+}
+.button::before{
+  content:"";position:absolute;inset:0;left:-4px;top:-1px;margin:auto;width:128px;height:48px;
+  border-radius:10px;background:linear-gradient(-45deg,#e81cff 0%,#40c9ff 100%);
+  z-index:-10;pointer-events:none;transition:all .6s cubic-bezier(.175,.885,.32,1.275);
+}
+.button::after{
+  content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(-45deg,#fc00ff 0%,#00dbde 100%);
+  transform:translate3d(0,0,0) scale(.95);filter:blur(20px);pointer-events:none;
+}
+.button:hover::after{filter:blur(30px);}
+.button:hover::before{transform:rotate(-180deg);}
+.button:active::before{scale:.7;}
+
+/* ─── 3-D layered “fancy-btn” (Hero CTA) ─────────────────────── */
+.fancy-btn{
+  position:relative;transform:rotate(-25deg) skew(25deg);transform-style:preserve-3d;
+  width:140px;height:44px;border:none;background:transparent;cursor:pointer;
+  z-index:10;padding:0;
+}
+.fancy-btn::before,.fancy-btn::after{content:"";position:absolute;background:#2a2a2a;}
+.fancy-btn::before{bottom:-12px;left:-7px;width:100%;height:12px;transform:skewX(-41deg);}
+.fancy-btn::after {top:6px;left:-12px;width:12px;height:100%;transform:skewY(-49deg);}
+.fancy-btn span{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:#2a2a2a;color:#fff;font-size:1.1rem;transition:1.1s ease-out;
+}
+/* hover explosions */
+.fancy-btn:hover span:nth-child(5){transform:translate(48px,-48px);opacity:1;}
+.fancy-btn:hover span:nth-child(4){transform:translate(36px,-36px);opacity:.85;}
+.fancy-btn:hover span:nth-child(3){transform:translate(24px,-24px);opacity:.65;}
+.fancy-btn:hover span:nth-child(2){transform:translate(12px,-12px);opacity:.45;}
+.fancy-btn:hover span:nth-child(1){transform:translate(0,0);opacity:.25;}
+.fancy-btn:hover span{z-index:2;transition:.35s;}
+.fancy-btn:active span:nth-child(5){transform:translate(24px,-24px);}
+.fancy-btn:active span:nth-child(4){transform:translate(18px,-18px);}
+.fancy-btn:active span:nth-child(3){transform:translate(12px,-12px);}
+.fancy-btn:active span:nth-child(2){transform:translate(6px,-6px);}
+.fancy-btn:hover span,.fancy-btn:active span{background:#52e19f;}
+
+
+
+
+
+/* ───────────────── Social-media mini-card in navbar ──────────── */
+.card-social{
+  display:flex;
+  gap:20px;
+  padding:14px 20px;
+  border-radius:12px;
+  background:#1a1a1a;
+  box-shadow:0 0 12px rgba(0,0,0,.45);
+}
+
+/* generic icon box  */
+.socialContainer{
+  width:52px;
+  height:52px;
+  border-radius:10px;
+  background:#2c2c2c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.35s;
+  overflow:hidden;
+}
+
+.socialContainer:hover   { transform:translateY(-4px); }
+.socialContainer:active  { transform:scale(.9); }
+
+.socialIcon{
+  font-size:1.7rem;
+  color:#ffffff;
+  transition:.35s;
+}
+
+/* LinkedIn brand blue on hover */
+.linkedinBox:hover{ background:#0072b1; }
+
+/* GitHub: subtle dark hover + bright icon */
+.githubBox:hover{ background:#333333; }
+.githubBox:hover .socialIcon{ color:#ffffff; }
+
+/* slide-in animation (reuse if already defined) */
+.socialContainer:hover .socialIcon{
+  animation:slide-in-top .3s both;
+}
+
+@keyframes slide-in-top{
+  0%   { transform:translateY(-50px); opacity:0; }
+  100% { transform:translateY(0);    opacity:1; }
+}
+
+
+
+/* ─── Hover-in campus photo for university row ────────────────── */
+.edu-item{
+  position:relative;
+}
+.edu-img{
+  position:absolute;
+  right:0;
+  top:50%;
+  width:220px;
+  border-radius:8px;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-50%) scale(.92);
+  transition:.4s ease;
+}
+/* on hover, fade & lift the photo */
+.edu-item:hover .edu-img{
+  opacity:1;
+  transform:translateY(-50%) scale(1);
+  box-shadow:0 6px 22px rgba(0,0,0,.55);
+}
+
+
+
+/* Instagram brand gradient on hover */
+.instaBox:hover{
+  background:#e4405f;
+}
+
+/* (optional) brighten icon on hover */
+.instaBox:hover .socialIcon{ color:#ffffff; }
+
+
+
+
+/* publication card styling */
+.pub-card{
+  background:#141414;
+  border:1px solid #30363d;
+  transition:.4s;
+}
+.pub-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,.55);
+}
+.pub-img{
+  transition:.4s;
+  filter:grayscale(40%);
+}
+.pub-card:hover .pub-img{
+  filter:none;                 /* color pop on hover */
+}
+
+
+
+
+
+/* certificate carousel sizing & look */
+.cert-carousel{
+  max-width:720px;
+  margin-inline:auto;
+}
+.cert-embed{
+  height:420px;               /* keep all slides same height */
+  border-radius:8px;
+  background:#0d0d14;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.carousel-control-icon{
+  font-size:2rem;
+  color:#ffffff;
+}
+.carousel-control-prev,
+.carousel-control-next{width:4rem;}
+.carousel-caption h6{
+  background:rgba(0,0,0,.65);
+  display:inline-block;
+  padding:.35rem .8rem;
+  border-radius:6px;
+  font-size:.9rem;
+}
+
+
+
+
+/* ─ Certificates slider (PDF) ───────────────────────────────── */
+.cert-shell{
+  max-width:760px;
+  margin-inline:auto;
+}
+.cert-track::-webkit-scrollbar{display:none;}         /* hide bar */
+.cert-card{width:240px;}
+.cert-embed{
+  width:100%;
+  height:170px;                 /* fits first page thumbnail */
+  background:#0d0d14;
+  border:0;
+}
+.cert-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border:none;border-radius:50%;
+  background:rgba(0,0,0,.65);color:#fff;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.25s;
+}
+.cert-arrow:hover{background:rgba(0,0,0,.85);}
+.cert-arrow.left {left:-22px;}
+.cert-arrow.right{right:-22px;}
+@media (max-width:575px){.cert-arrow{display:none;}}   /* swipe only on phones */
+
+
+
+
+/* ─── Embla base ---------------------------------------------------------- */
+.embla { overflow:hidden; }
+.embla__container{
+  display:flex; gap:24px;
+}
+.embla__slide{
+  flex:0 0 60%;            /* base width (center) */
+  transition:transform .4s, opacity .4s;
+  scroll-snap-align:center;
+}
+.cert-embed{
+  width:100%; height:220px;
+  background:#0d0d14; border:0;
+}
+
+/* center scale vs side scale -------------------------------------------- */
+.embla__slide{ transform:scale(.8); opacity:.4; }
+.embla__slide.is-selected{ transform:scale(1); opacity:1; }
+
+/* arrow styles (same look as before) ------------------------------------- */
+.cert-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border:none;border-radius:50%;
+  background:rgba(0,0,0,.65);color:#fff;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.25s;
+}
+.cert-arrow:hover{background:rgba(0,0,0,.85);}
+.cert-arrow.left {left:-22px;}
+.cert-arrow.right{right:-22px;}
+@media (max-width:575px){.cert-arrow{display:none;}}
+.cert-shell{max-width:760px;margin-inline:auto;}
+
+
+
+/* push the hero block 80 px away from the fixed navbar */
+.hero-section {
+  padding-top: 200px;   /* adjust to the exact gap you want */
+}
+
+
+
+/* ─── Vertical timeline for Experience ───────────────────────── */
+.timeline{
+  position:relative; padding-left:30px;
+}
+.timeline::before{
+  content:""; position:absolute; left:11px; top:0;
+  width:2px; height:100%; background:#30363d;
+}
+.timeline-item{
+  position:relative;
+}
+.timeline-item::before{
+  content:""; position:absolute; left:-21px; top:4px;
+  width:14px; height:14px; border-radius:50%;
+  background:#0d0d14; border:3px solid #c084fc;   /* lavender dot */
+}
+
+
+
+
+
+
+.contact-card{
+  background:#0d1117;
+  border:1px solid #30363d;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+
+
+
+
+/* ─── Footer styling ─────────────────────────────────────────── */
+.site-footer{
+  background:#0d0d14;
+  border-top:1px solid #30363d;
+  color:#c9d1d9;
+}
+.footer-links a{
+  color:#c9d1d9;
+  font-size:.9rem;
+  text-decoration:none;
+  transition:.25s;
+}
+.footer-links a:hover{ color:#58a6ff; }
+
+.footer-icon{
+  font-size:1.5rem;
+  color:#c9d1d9;
+  transition:.3s;
+}
+.footer-icon.linkedin:hover{ color:#0072b1; }
+.footer-icon.github:hover  { color:#ffffff; }
+.footer-icon.mail:hover    { color:#c084fc; }
+
+@media(max-width:575px){
+  .footer-links{ text-align:center; }
+}
