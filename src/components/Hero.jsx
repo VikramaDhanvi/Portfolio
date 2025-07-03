@@ -1,12 +1,9 @@
-/* src/components/Hero.jsx */
-
 import React from "react";
 import { motion } from "framer-motion";
 import useTypewriter from "../hooks/useTypewriter";
 
 const accent = "#c084fc"; // highlight color
 
-/* smooth-scroll helper (1.4 s cubic ease-in-out) */
 function smoothScrollTo(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -38,11 +35,8 @@ const Hero = () => {
   );
 
   return (
-    
-    <header id="hero" className="hero-section position-relative">
-      {/* entire foreground */}
+    <header id="hero" className="hero-section position-relative" style={{ paddingTop: "100px" }}>
       <div className="container d-flex flex-column flex-lg-row align-items-center pt-5">
-        {/* ── LEFT column ────────────────────────────────── */}
         <motion.div
           className="flex-grow-1 text-center text-lg-start"
           initial={{ opacity: 0, y: 45 }}
@@ -60,22 +54,15 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* typewriter text + caret */}
           <h3 className="text-white mb-4 d-inline-flex align-items-center">
             <span>{typed}</span>
             <span className="typing-caret">|</span>
           </h3>
-          <br></br>
-          <a
-            href="/resume.pdf"
-            download
-            className="btn btn-outline-light btn-lg"
-          >
-            Download Résumé
-          </a>
+
+          
+
         </motion.div>
 
-        {/* ── RIGHT: 3-D CTA button ─────────────────────── */}
         <motion.div
           className="mt-5 mt-lg-0 ms-lg-5"
           initial={{ opacity: 0, x: 60 }}

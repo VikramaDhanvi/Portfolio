@@ -118,7 +118,7 @@ export default function Footer() {
         {/* socials */}
         <div style={{ display: "flex", gap: "1.5rem", marginBottom: "2rem" }}>
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/vikrama-dhanvi-paduchuri-291077356/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ fontSize: "1.5rem", color: fg, transition: "color .3s" }}
@@ -127,7 +127,7 @@ export default function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/VikramaDhanvi"
             target="_blank"
             rel="noopener noreferrer"
             style={{ fontSize: "1.5rem", color: fg, transition: "color .3s" }}

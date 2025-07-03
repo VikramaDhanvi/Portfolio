@@ -72,7 +72,7 @@ const Navbar = () => (
         <div className="d-none d-lg-flex ms-lg-4">
           <div className="card-social">
             <a
-              href="https://linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/vikrama-dhanvi-paduchuri-291077356/"
               className="socialContainer linkedinBox"
               title="LinkedIn"
               target="_blank"
@@ -81,7 +81,7 @@ const Navbar = () => (
               <FaLinkedin className="socialIcon" />
             </a>
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/VikramaDhanvi"
               className="socialContainer githubBox"
               title="GitHub"
               target="_blank"
@@ -90,7 +90,7 @@ const Navbar = () => (
               <FaGithub className="socialIcon" />
             </a>
             <a
-              href="https://instagram.com/your-handle"
+              href="https://www.instagram.com/vikrama_dhanvi/"
               className="socialContainer instaBox"
               title="Instagram"
               target="_blank"

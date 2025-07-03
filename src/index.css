@@ -296,10 +296,7 @@ section   { scroll-margin-top: 72px; }
 
 
 
-/* push the hero block 80 px away from the fixed navbar */
-.hero-section {
-  padding-top: 200px;   /* adjust to the exact gap you want */
-}
+
 
 
 
@@ -360,3 +357,6 @@ section   { scroll-margin-top: 72px; }
 @media(max-width:575px){
   .footer-links{ text-align:center; }
 }
+
+
+
