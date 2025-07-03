@@ -37,6 +37,7 @@ const Hero = () => {
   return (
     <header id="hero" className="hero-section position-relative" style={{ paddingTop: "100px" }}>
       <div className="container d-flex flex-column flex-lg-row align-items-center pt-5">
+        {/* ── LEFT ─────────────────────────────────────────── */}
         <motion.div
           className="flex-grow-1 text-center text-lg-start"
           initial={{ opacity: 0, y: 45 }}
@@ -59,10 +60,18 @@ const Hero = () => {
             <span className="typing-caret">|</span>
           </h3>
           <br></br>
-          
-
+          {/* 🎯 Resume Button BELOW the typewriter */}
+          <a
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-light btn-lg"
+          >
+            Download Résumé
+          </a>
         </motion.div>
 
+        {/* ── RIGHT: 3-D CTA button ───────────────────────── */}
         <motion.div
           className="mt-5 mt-lg-0 ms-lg-5"
           initial={{ opacity: 0, x: 60 }}
