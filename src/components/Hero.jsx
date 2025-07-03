@@ -59,9 +59,7 @@ const Hero = () => {
             <span className="typing-caret">|</span>
           </h3>
           <br></br>
-          <a href="/resume.pdf" download className="btn btn-outline-light btn-lg">
-  Download Résumé
-</a>
+          
 
         </motion.div>
 
