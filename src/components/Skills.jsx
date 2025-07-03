@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 /* ---- skill data with % ----------------------------------------- */
 const skills = {
   Languages: [
-    { name: "C",          pct: 70 },
-    { name: "C++",        pct: 75 },
-    { name: "Python",     pct: 90 },
-    { name: "JavaScript", pct: 85 },
-    { name: "SQL",        pct: 80 },
+    { name: "C",          pct: 90 },
+    { name: "C++",        pct: 85 },
+    { name: "Python",     pct: 75 },
+    { name: "JavaScript", pct: 60 },
+    { name: "SQL",        pct: 70 },
   ],
   Frontend: [
-    { name: "HTML",      pct: 90 },
-    { name: "CSS",       pct: 85 },
-    { name: "JavaScript",pct: 85 },
-    { name: "React.js",  pct: 80 },
+    { name: "HTML",      pct: 100 },
+    { name: "CSS",       pct: 80 },
+    { name: "JavaScript",pct: 65 },
+    { name: "React.js",  pct: 60 },
   ],
   Backend: [
-    { name: "Node.js",   pct: 75 },
+    { name: "Node.js",   pct: 80 },
     { name: "Express.js",pct: 70 },
-    { name: "PHP",       pct: 60 },
+    { name: "PHP",       pct: 80 },
   ],
   Tools: [
     { name: "Git",    pct: 90 },
@@ -32,10 +32,10 @@ const skills = {
     { name: "MongoDB", pct: 70 },
   ],
   Concepts: [
-    { name: "DSA",                  pct: 85 },
-    { name: "OOP",                  pct: 90 },
-    { name: "REST APIs",            pct: 80 },
-    { name: "Full-stack Integration", pct: 75 },
+    { name: "DSA",                  pct: 55 },
+    { name: "OOP",                  pct: 70 },
+    { name: "REST APIs",            pct: 60 },
+    { name: "Full-stack Integration", pct: 80 },
   ],
 };
 

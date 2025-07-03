@@ -22,7 +22,7 @@ const Publications = () => (
           <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title mb-3">
-                Face Liveness Detection Using Image Processing
+                Ongoing Resaerch on Face Liveness Detection Using Image Processing
               </h5>
               <p className="card-text mb-0">
                 Applied computer-vision techniques—head tilting, blinking, and

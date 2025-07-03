@@ -73,7 +73,7 @@ export default function Contact() {
           {/* company email */}
           <div style={group}>
             <label htmlFor="c-email" style={label}>
-              Company&nbsp;Email
+              Company&nbsp;Name
             </label>
             <input
               id="c-email"
